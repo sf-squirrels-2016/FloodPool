@@ -1,0 +1,9 @@
+<div id="question-<%= @question.id %>">
+  <h1><%= @question.title %></h1>
+
+  <p><%= @question.text %></p>
+
+  <% @answers.each do |answer| %>
+    <h2><%= answer.text %></h2>
+  <% end %>
+</div>
