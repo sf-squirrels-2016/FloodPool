@@ -8,8 +8,12 @@ end
 
 class User < ActiveRecord::Base
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  has_many :questions
+  has_many :answers
+  has_many :comments
+  has_many :votes
+
+  validates :name, presence: true
   validates :email, presence: true, uniqueness: true, email: true
   validates :password_hash, presence: true
 
