@@ -7,7 +7,7 @@ Monique
 Dave
 
 Git Workflow -
-Don't merge you own Shit!
+Don't merge you own pull request!
 Tag the team on a commit
 Jordan owns the repository
 Add everybody as collaborators
