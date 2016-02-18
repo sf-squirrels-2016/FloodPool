@@ -8,7 +8,7 @@ get '/users/new' do
 end
 
 post '/users/new' do
-  @user = User.new(first_name: params[:name], email: params[:email])
+  @user = User.new(name: params[:name], email: params[:email])
   @user.password = params[:password_plaintext]
   if @user.save
     session[:user_id] = @user.id
