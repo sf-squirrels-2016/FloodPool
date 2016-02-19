@@ -5,4 +5,5 @@ class Comment < ActiveRecord::Base
 
   has_many :votes, as: :voting_on
 
+  include Count
 end
