@@ -1,3 +1,7 @@
+get '/questions' do 
+	erb :"questions/index"
+end
+
 get '/questions/new' do
   erb :questions
 end
@@ -16,4 +20,3 @@ get '/questions/:id' do
 
   erb :"questions/show"
 end
-
