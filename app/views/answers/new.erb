@@ -1,0 +1,6 @@
+<form id='new_answer' action='/questions/<%= @question.id%>/answers/new' method='POST'>
+  <label for='answer_text'>answer?</label>
+  <br>
+  <textarea id='answer_text' rows='8' cols='50' name='answer[text]'></textarea>
+  <input type='submit' value='Post Answer'>
+</form>
