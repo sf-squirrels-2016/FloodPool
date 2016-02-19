@@ -7,7 +7,7 @@
 <p>Your Questions:</p>
 <ul>
   <% @logged_in_as.questions.each do |quest| %>
-  <li><a href="<%="/questions/#{quest.id}"%>"><%= quest.title %></li><br>
+  <li><a href="<%="/questions/#{quest.id}"%>"><%= quest.title %></a></li><br>
   <%end%>
 </ul>
 
@@ -15,18 +15,6 @@
 <ul>
   <% @logged_in_as.answers.each do |answ| %>
   <li>
-    <a href="<%="/questions/#{answ.question_id}"%>"><%= answ.text %></li><br>
+    <a href="<%="/questions/#{answ.question_id}"%>"><%= answ.text %></a></li><br>
   <%end%>
 </ul>
-
-<% if session[:id] === @logged_in_as.id %>
-  <form method="GET" action="/users/<%= @logged_in_as.id %>/edit">
-    <input type="submit" value="Edit Info">
-  </form>
-  <br>
-
-  <form method="POST" action="/sessions">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Logout">
-  </form>
-<% end %>
