@@ -1,6 +1,6 @@
 get '/' do
 
-  erb :index
+  erb :'questions/index'
 end
 
 get '/secret' do
