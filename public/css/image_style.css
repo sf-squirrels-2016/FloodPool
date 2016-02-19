@@ -1,0 +1,53 @@
+.vote {
+  display: inline-block;
+  font-size: 2em;
+  color: red;
+  max-width: 100px;
+  float: left;
+  margin-right: 1em;
+}
+
+.vote > p {
+  float: left;
+  margin-right: 0.5em;
+}
+
+.up-vote {
+  background: url('../images/thumbs-up.jpg');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+.down-vote {
+  background: url('../images/thumbs-down.jpg');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  /*max-height: 220px;
+  width: auto;*/
+}
+
+.vote-wrapper {
+  display: inline-block;
+  max-width: 30px;
+}
+
+.bestest {
+  background: url('../images/cthulhu.jpg');
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.indent {
+  margin-left: 9%;
+}
+
+.answer-wrapper {
+  margin-bottom: 4%;
+}
