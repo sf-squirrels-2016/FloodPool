@@ -3,10 +3,13 @@
   font-size: 2em;
   color: red;
   max-width: 100px;
+  float: left;
+  margin-right: 1em;
 }
 
 .vote > p {
   float: left;
+  margin-right: 0.5em;
 }
 
 .up-vote {
@@ -39,4 +42,12 @@
   background: url('../images/cthulhu.jpg');
   background-repeat: no-repeat;
   display: inline-block;
+}
+
+.indent {
+  margin-left: 9%;
+}
+
+.answer-wrapper {
+  margin-bottom: 4%;
 }
