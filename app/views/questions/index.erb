@@ -4,6 +4,12 @@
 		<a href="/questions/<%=question.id%>"><%= question.title %></a><br>
 	<% end %>
 </p>
-<p>
-	Don't see what you're looking for?  Ask your own question <a href="/questions/new">here</a>!
-</p>
+<% if logged_in? %>
+  <p>
+  	Don't see what you're looking for?  Ask your own question <a href="/questions/new">here</a>!
+  </p>
+<% else %>
+  <p>
+    Don't see what you're looking for?  Login or Register to ask a question
+  </p>
+<% end %>
