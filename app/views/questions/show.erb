@@ -1,9 +1,42 @@
-<div id="question-<%= @question.id %>">
-  <h1><%= @question.title %></h1>
+<div id="question-wrapper">
+  <div id="vote-question-<%= @question.id %>" class='vote'>
+    <p><%= @question.count_votes %></p>
+  </div>
 
-  <p><%= @question.text %></p>
+  <div id="question-<%= @question.id %>">
+    <h1><%= @question.title %></h1>
+    <h3><%= @question.text %></h3>
+
+    <h5>- <%= @question.user.name %></h5>
+  </div>
+
+  <% @question.comments.each do |comment|%>
+    <div id="vote-comment-<%= comment.id %>" class='vote'>
+      <p><%= comment.count_votes %></p>
+    </div>
+    <div id="comment-<%= comment.id %>" class="comment">
+      <p><%= comment.text %></p>
+      <p>- <%= comment.user.name %></p>
+    </div>
+  <% end %>
 
   <% @answers.each do |answer| %>
-    <h2><%= answer.text %></h2>
+    <div id="vote-answer-<%= answer.id %>" class='vote'>
+      <p><%= answer.count_votes %></p>
+    </div>
+    <div id="answer-<%= answer.id %>">
+      <h2><%= answer.text %></h2>
+      <h5>- <%= answer.user.name %></h5>
+    </div>
+
+    <% answer.comments.each do |comment| %>
+      <div id="vote-comment-<%= comment.id %>" class='vote'>
+        <p><%= comment.count_votes %></p>
+      </div>
+      <div id="comment-<%= comment.id %>" class="comment">
+        <p><%= comment.text %></p>
+        <p>- <%= comment.user.name %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
