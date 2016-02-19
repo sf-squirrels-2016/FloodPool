@@ -1,3 +1,3 @@
   def logged_in?
-    session[:id] != nil
+    session[:user_id] != nil
   end
