@@ -1,0 +1,34 @@
+<h1>Welcome <%= @logged_in_as.name %></h1>
+<a href="/">Go Back To Home</a>
+<a href="/questions/new">Create New Question</a>
+
+
+<p>Name:</p>
+<p><%= @logged_in_as.name %> </p>
+
+
+<p>Your Questions:</p>
+<ul>
+  <% @logged_in_as.questions.each do |quest| %>
+  <li><a href="<%="/questions/#{quest.id}"%>"><%= quest.title %></li><br>
+  <%end%>
+</ul>
+
+<p>Your Answers:</p>
+<ul>
+  <% @logged_in_as.answers.each do |answ| %>
+  <li><a href="<%="/questions/#{quest.id}"%>"><%= answ.text %></li><br>
+  <%end%>
+</ul>
+
+<% if session[:id] === @logged_in_as.id %>
+  <form method="GET" action="/users/<%= @logged_in_as.id %>/edit">
+    <input type="submit" value="Edit Info">
+  </form>
+  <br>
+
+  <form method="POST" action="/sessions">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Logout">
+  </form>
+<% end %>
