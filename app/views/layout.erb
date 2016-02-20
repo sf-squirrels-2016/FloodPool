@@ -1,113 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/favicon.ico">
 
-    <title>Sinatra Skeleton w/ Authentication & Bootstrap</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
 
-    <!-- Bootstrap core CSS -->
-    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+Name       : Lettering
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120513
 
-    <!-- Bootstrap theme -->
-    <link href="/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Lettering by TEMPLATED</title>
+<!-- <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" /> -->
+<link href="/css-template/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+					<%= yield %>
 
-    <!-- Custom styles for this template -->
-    <link href="/bootstrap/theme.css" rel="stylesheet">
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+					<div id="logo">
+						<h1><a href="#">FloodPool </a></h1>
+					</div>
+					<div id="menu">
+						<ul id="nav-list">
+							<li id="home-button"><a href="/">Home</a></li>
+							<% if logged_in? %>
+								<li id="profile-button"><a href="<%= "/users/#{session[:user_id]}" %>">Profile</a></li>
+								<li id="question-button"><a href="/questions/new">Ask A Question!</a></li>
+							<% else %>
+								<li id="register-button"><a href="/users/new">Register</a></li>
+								<li id="login-button"><a href="/sessions/new">Login</a></li>
+							<% end %>
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					</div>
 
-    <!-- <link rel="stylesheet" type="text/css" href="../public/css/image_style.css"> -->
-    <link rel="stylesheet" type="text/css" href="/css/image_style.css">
+				</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p>&copy; Untitled. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Background by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+</div>
+<script src="/js/question_answer.js"></script>
+<!-- end #footer -->
+</body>
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body role="document">
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">SSwpAaB3</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/users/new">Register</a></li>
-            <li><a href="/sessions/new">Login</a></li>
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="/secret">Secret Area</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <div class="container theme-showcase" role="main">
-
-      <%= yield %>
-
-    </div> <!-- /container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bootstrap/assets/js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <!-- Attaching sinatra js file -->
-    <script src="/js/application.js"></script>
-    <script src="/js/question_answer.js"></script>
-  </body>
 </html>

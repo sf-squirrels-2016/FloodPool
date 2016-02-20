@@ -1,0 +1,20 @@
+<h1>Welcome <%= @logged_in_as.name %></h1>
+<a href="/">Go Back To Home</a>
+<a href="/questions/new">Create New Question</a>
+<br>
+<br>
+
+<p>Your Questions:</p>
+<ul>
+  <% @logged_in_as.questions.each do |quest| %>
+  <li><a href="<%="/questions/#{quest.id}"%>"><%= quest.title %></a></li><br>
+  <%end%>
+</ul>
+
+<p>Your Answers:</p>
+<ul>
+  <% @logged_in_as.answers.each do |answ| %>
+  <li>
+    <a href="<%="/questions/#{answ.question_id}"%>"><%= answ.text %></a></li><br>
+  <%end%>
+</ul>
