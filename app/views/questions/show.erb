@@ -29,12 +29,13 @@
       <p class="indent">- <%= comment.user.name %></p>
     </div>
   <% end %>
-
-  <div id="answer-button">
-    <form action="/questions/<%= @question.id %>/answers/new" method="get">
-      <input type="submit" value="Answer this question">
-    </form>
-  </div>
+  <% if logged_in? %>
+    <div id="answer-button">
+      <form action="/questions/<%= @question.id %>/answers/new" method="get">
+        <input type="submit" value="Answer this question">
+      </form>
+    </div>
+  <% end %>
 
   <hr>
 
