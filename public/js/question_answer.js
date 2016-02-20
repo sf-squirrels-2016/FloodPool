@@ -13,16 +13,12 @@ $(document).ready(function () {
     var num = (parseInt(vote) + 1)
     $(this).parent().siblings('p').text(num);
     voteClick(post, 1, identifier);
-
   })
 
 
 });
 
 function voteClick(postType, voteValue, postId) {
-    var elem = this;
-    console.log(elem)
-
   $.ajax({
           method: "POST",
           url: "/votes/new",
