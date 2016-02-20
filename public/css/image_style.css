@@ -29,8 +29,6 @@
   display: inline-block;
   height: 30px;
   width: 30px;
-  /*max-height: 220px;
-  width: auto;*/
 }
 
 .vote-wrapper {
@@ -41,6 +39,7 @@
 .bestest {
   background: url('../images/cthulhu.jpg');
   background-repeat: no-repeat;
+  background-size: 30px 30px;
   display: inline-block;
 }
 
@@ -50,4 +49,9 @@
 
 .answer-wrapper {
   margin-bottom: 4%;
+}
+
+#answer-button {
+  text-align: center;
+  margin: 2% auto;
 }

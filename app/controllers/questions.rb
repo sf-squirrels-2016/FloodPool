@@ -1,4 +1,4 @@
-get '/questions' do 
+get '/questions' do
 	erb :"questions/index"
 end
 
