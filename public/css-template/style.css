@@ -24,7 +24,7 @@ input[type="submit"] {
 body {
 	margin: 30px 0px 0px 0px;
 	padding: 0;
-	background: url(images/img01.jpg) repeat; 
+	background: url(images/img01.jpg) repeat;
 	font-family: 'Arvo', serif;
 	font-size: 13px;
 	color: #3E3B36;
@@ -118,7 +118,7 @@ a:hover {
 	margin: 0px;
 	font-size: 20px;
 	color: #E0B1B9;
-} 
+}
 
 #logo a {
 	border: none;
@@ -394,4 +394,62 @@ box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .2);}
 
 #footer a {
 	color: #FFFFFF;
+}
+
+.vote {
+  display: inline-block;
+  font-size: 2em;
+  color: red;
+  max-width: 100px;
+  float: left;
+  margin-right: 1em;
+}
+
+.vote > p {
+  float: left;
+  margin-right: 0.5em;
+}
+
+.up-vote {
+  background: url('../images/thumbs-up.jpg');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+.down-vote {
+  background: url('../images/thumbs-down.jpg');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+.vote-wrapper {
+  display: inline-block;
+  max-width: 30px;
+}
+
+.bestest {
+  background: url('../images/cthulhu.jpg');
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  display: inline-block;
+}
+
+.indent {
+  margin-left: 9%;
+}
+
+.answer-wrapper {
+  margin-bottom: 4%;
+}
+
+#answer-button {
+  text-align: center;
+  margin: 2% auto;
 }

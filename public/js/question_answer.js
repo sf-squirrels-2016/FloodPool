@@ -15,6 +15,16 @@ $(document).ready(function () {
     voteClick(post, 1, identifier);
   })
 
+  $('.vote a.down-vote').on('click', function(e) {
+    e.preventDefault();
+    var thisClass = $(this).attr('class');
+    var post = thisClass.split(' ')[0];
+    var identifier = $(this).attr('id').split('-')[2];
+    var vote = $(this).parent().siblings('p').text();
+    var num = (parseInt(vote) - 1)
+    $(this).parent().siblings('p').text(num);
+    voteClick(post, -1, identifier);
+  })
 
 });
 

@@ -1,7 +1,7 @@
 <div id="question-wrapper">
 
   <div id="vote-question-<%= @question.id %>" class='vote'>
-    <p id="goddamn"><%= @question.count_votes %></p>
+    <p><%= @question.count_votes %></p>
     <div class="vote-wrapper">
       <a href='/votes/new' id="question-vote-<%= @question.id %>-up" class="Question up-vote"></a>
       <a href='/votes/new' id="question-vote-<%= @question.id %>-down" class="Question down-vote"></a>
@@ -19,8 +19,8 @@
       <p><%= comment.count_votes %></p>
 
       <div class="vote-wrapper">
-        <div class="up-vote"></div>
-        <div class="down-vote"></div>
+        <a href='/votes/new' id="comment-vote-<%= comment.id %>-up" class="Comment up-vote"></a>
+        <a href='/votes/new' id="comment-vote-<%= comment.id %>-down" class="Comment down-vote"></a>
       </div>
     </div>
 
@@ -44,8 +44,8 @@
         <p><%= answer.count_votes %></p>
 
         <div class="vote-wrapper">
-          <div class="up-vote"></div>
-          <div class="down-vote"></div>
+          <a href='/votes/new' id="answer-vote-<%= answer.id %>-up" class="Answer up-vote"></a>
+          <a href='/votes/new' id="answer-vote-<%= answer.id %>-down" class="Answer down-vote"></a>
         </div>
       </div>
 
@@ -59,8 +59,8 @@
           <p><%= comment.count_votes %></p>
 
           <div class="vote-wrapper">
-            <div class="up-vote"></div>
-            <div class="down-vote"></div>
+            <a href='/votes/new' id="comment-vote-<%= comment.id %>-up" class="Comment up-vote"></a>
+            <a href='/votes/new' id="comment-vote-<%= comment.id %>-down" class="Comment down-vote"></a>
           </div>
         </div>
 
