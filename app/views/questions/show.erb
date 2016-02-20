@@ -31,7 +31,7 @@
   <% end %>
 
   <div id="answer-button">
-    <form action="/questions/<%= @question.id %>/answers/new" method="POST">
+    <form action="/questions/<%= @question.id %>/answers/new" method="get">
       <input type="submit" value="Answer this question">
     </form>
   </div>
